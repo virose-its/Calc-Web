@@ -16,7 +16,7 @@ function filterAngle(angle) {
 
   let contoh = angle.split("pose=");
   let contoh2 = contoh
-    .filter((frame) => frame.length > 40)
+    .filter((frame) => frame.length > 45)
     .map((frame) => frame.split("/>")[0])
     .map((frame) => frame.slice(1, frame.length - 2));
   contoh3 = contoh2.map((frame, index) => {
@@ -37,24 +37,23 @@ function filterAngle(angle) {
   return stringContoh;
 }
 
-let datacoba = `Keyframes
-Motion2+Step|<step frame="77" pose="-0.88 0 0 -39.84 32.52 -14.65 18.16 36.91 -37.21 -32.81 30.47 -132.42 134.18 66.21 -65.62" />
+// let datacoba = `
+// Keyframes
+// Motion2+Step|<step frame="128" pose="-1.46 -13.48 25.2 -96.39 0 -43.36 35.16 1.76 79.1 -41.31 41.89 5.27 -5.27 53.61 58.89" />
 
-Motion2+Step|<step frame="153" pose="0 0 0 -31.75 31.65 -63.52 67.04 -66.03 63.13 -49.88 50.71 -18.49 18.51 47.99 -47.98" />
+// Motion2+Step|<step frame="153" pose="-1.46 -13.48 33.69 -96.39 0 -43.36 35.16 1.76 79.1 -60.94 41.89 4.98 -5.27 -60.64 58.89" />
 
-Motion2+Step|<step frame="154" pose="0 0 0 -31.64 31.64 -64.16 67.68 -67.38 64.45 -50.1 50.98 -16.99 16.99 47.75 -47.75" />
+// Motion2+Step|<step frame="231" pose="-1.46 1.46 62.99 0 0 -35.16 35.16 -79.1 79.1 -41.89 41.89 5.27 -5.27 -58.89 58.89" />
 
-Motion2+Step|<step frame="230" pose="0 0 0 1.76 -1.76 -85 85 -80.86 80.86 -51.27 51.27 -17.29 17.29 46.58 -46.58" />
+// Motion2+Step|<step frame="282" pose="0 0 0 0 0 -35.16 35.16 -79.1 79.1 -41.89 41.89 5.27 -5.27 -58.89 58.89" />
 
-Motion2+Step|<step frame="245" pose="0 0 0 1.76 -1.76 -84 84 -81.45 81.45 -46.58 46.58 -18.46 18.46 18.46 -18.46" />
+// Motion2+Step|<step frame="359" pose="-1.46 13.48 -25.2 0 96.39 -35.16 43.36 -79.1 -1.76 -41.89 41.31 5.27 -5.27 -58.89 -53.61" />
 
-Motion2+Step|<step frame="282" pose="0 0 0 1.46 -1.46 -81 81 -82.91 82.91 -35.45 35.45 -21.09 21.09 -51.27 51.27" />
+// Motion2+Step|<step frame="385" pose="-1.46 13.48 -33.69 0 96.39 -35.16 43.36 -79.1 -1.76 -41.89 60.94 5.27 -4.98 -58.89 60.64" />
 
-Motion2+Step|<step frame="334" pose="0 0 0 2.34 -2.34 -72.07 72.07 -82.32 82.32 -34.86 34.86 -20.51 20.51 -51.27 51.27" />
+// Motion2+Step|<step frame="462" pose="-1.46 -1.46 -62.99 0 0 -35.16 35.16 -79.1 79.1 -41.89 41.89 5.27 -5.27 -58.89 58.89" />
 
-Motion2+Step|<step frame="410" pose="-0.88 0 0 3.81 -3.81 -29 29 -81.45 81.45 -33.98 33.98 -19.92 19.92 -51.27 51.27" />
-
-`;
+// `;
 
 // console.log(filterAngle(datacoba));
 
