@@ -57,13 +57,65 @@ function filterAngle(angle) {
 
 // console.log(filterAngle(datacoba));
 
+
+
+const button_XL = document.querySelector("#button_XL");
+const button_MX = document.querySelector("#button_MX");
+const clipboard = document.querySelector("div.tooltip");
+const output = document.querySelector("div.textarea");
 const button = document.querySelector("button");
+
 button.addEventListener("click", (event) => {
     event.preventDefault();
     // Your Code Here
     const input = document.querySelector("input");
-    const output = document.getElementById("data-output");
     const data = input.value;
 
+    output.classList.add("text-sky-500");
+    output.classList.remove("text-[#575E6D]");
     output.innerHTML = filterAngle(data);
 });
+
+button_MX.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  button_MX.classList.remove("text-[#687A9E]");
+  button_MX.classList.add("bg-[#BDA7E9]", "text-[#2B2D50]");
+  button_XL.classList.remove("bg-[#BDA7E9]", "text-[#2B2D50]");
+  button_XL.classList.add("text-[#687A9E]");
+});
+
+button_XL.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  button_XL.classList.remove("text-[#687A9E]");
+  button_XL.classList.add("bg-[#BDA7E9]", "text-[#2B2D50]");
+  button_MX.classList.remove("bg-[#BDA7E9]", "text-[#2B2D50]");
+  button_MX.classList.add("text-[#687A9E]");
+});
+
+clipboard.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const textArea = document.querySelector("div.textarea").innerHTML;
+  navigator.clipboard.writeText(textArea);
+  console.log(textArea);
+
+  const tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied!";
+});
+
+clipboard.addEventListener("mouseout", (event) => {
+  const tooltip = document.querySelector("span.tooltiptext");
+  tooltip.innerHTML = "Copy to clipboard";
+});
+
+output.innerHTML = `{
+    {507,466,598,183,512,364,632,518,782,371,655,530,494,695,713,1000},
+    {507,466,627,183,512,364,632,518,782,304,655,529,494,305,713,1195},
+    {507,517,727,512,512,392,632,242,782,369,655,530,494,311,713,1804},
+    {512,512,512,512,512,392,632,242,782,369,655,530,494,311,713,2202},
+    {507,558,426,512,841,392,660,242,506,369,653,530,494,311,329,2804},
+    {507,558,397,512,841,392,660,242,506,369,720,530,495,311,719,3007},
+    {507,507,297,512,512,392,632,242,782,369,655,530,494,311,713,3608}
+}`;
